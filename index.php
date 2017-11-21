@@ -36,7 +36,7 @@ name="email" id="email"/></br>
 name="submit" value="Submit" />
 </form>
 <?php
-}
+
 // DB connection info
 $host = "localhost\sqlexpress";
 $user = "user name";
