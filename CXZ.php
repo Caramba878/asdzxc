@@ -5,7 +5,7 @@ try {
     $sql = "CREATE TABLE city_table(
     id INT NOT NULL IDENTITY(1,1) 
     PRIMARY KEY(id),
-    City VARCHAR()
+    City VARCHAR(10)
     $conn->query($sql);
 }
 }
