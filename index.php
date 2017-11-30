@@ -95,7 +95,7 @@ if(count($registrants) > 0) {
     echo "<tr><th>Name</th>";
     echo "<th>Email</th>";
     echo "<th>Date</th>";
-    echo "<th>City</th></tr>";
+    echo "<th>city</th></tr>";
     foreach($registrants as $registrant) {
         echo "<tr><td>".$registrant['name']."</td>";
         echo "<td>".$registrant['email']."</td>";
