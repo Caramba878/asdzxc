@@ -32,7 +32,24 @@ enctype="multipart/form-data" >
 name="name" id="name"/></br>
       Email <input type="text" 
 name="email" id="email"/></br>
-      <input type="submit" 
+    
+    
+    <label for="city">choose_your_city:</label>
+    <select id="city" name="city">
+                    <option value="Moskow">Moskow</option>
+                    <option value="Novosibirsk">Novosibirsk</option>
+                    <option value="Ekaterenburg">Ekaterenburg</option>
+                    <option value="Kazan">Kazan</option>
+                    <option value="Chelyabinsk">Chelyabinsk</option>
+                    <option value="Omsk">Omsk</option>
+                    <option value="Samara">Samara</option>
+                    <option value="Ufa">Ufa</option>
+                    <option value="Saratov">Saratov</option>
+                    <option value="Volgograd"></option>
+                </select>
+    
+    
+    <input type="submit" 
 name="submit" value="Submit" />
 </form>
 <?php
