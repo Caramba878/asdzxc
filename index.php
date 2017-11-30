@@ -45,7 +45,7 @@ name="email" id="email"/></br>
                     <option value="Samara">Samara</option>
                     <option value="Ufa">Ufa</option>
                     <option value="Saratov">Saratov</option>
-                    <option value="Volgograd"></option>
+                    <option value="Volgograd">Volgograd</option>
                 </select>
     
     
@@ -68,14 +68,16 @@ try {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $date = date("Y-m-d");
+    $name = $_POST['city'];
     // Insert data
     $sql_insert = 
-"INSERT INTO registration_tbl (name, email, date) 
+"INSERT INTO registration_tbl (name, email, date, city) 
                    VALUES (?,?,?)";
     $stmt = $conn->prepare($sql_insert);
     $stmt->bindValue(1, $name);
     $stmt->bindValue(2, $email);
     $stmt->bindValue(3, $date);
+    $stmt->bindValue(4, $city);
     $stmt->execute();
 }
 catch(Exception $e) {
@@ -92,11 +94,13 @@ if(count($registrants) > 0) {
     echo "<table>";
     echo "<tr><th>Name</th>";
     echo "<th>Email</th>";
-    echo "<th>Date</th></tr>";
+    echo "<th>Date</th>";
+    echo "<th>City</th></tr>";
     foreach($registrants as $registrant) {
         echo "<tr><td>".$registrant['name']."</td>";
         echo "<td>".$registrant['email']."</td>";
-        echo "<td>".$registrant['date']."</td></tr>";
+        echo "<td>".$registrant['date']."</td>";
+        echo "<td>".$registrant['city']."</td></tr>";
     }
     echo "</table>";
 } else {
