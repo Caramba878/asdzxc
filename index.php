@@ -34,19 +34,7 @@ name="name" id="name"/></br>
 name="email" id="email"/></br>
     
     
-    <label for="city">choose_your_city:</label>
-    <select id="city" name="city">
-                    <option value="Moskow">Moskow</option>
-                    <option value="Novosibirsk">Novosibirsk</option>
-                    <option value="Ekaterenburg">Ekaterenburg</option>
-                    <option value="Kazan">Kazan</option>
-                    <option value="Chelyabinsk">Chelyabinsk</option>
-                    <option value="Omsk">Omsk</option>
-                    <option value="Samara">Samara</option>
-                    <option value="Ufa">Ufa</option>
-                    <option value="Saratov">Saratov</option>
-                    <option value="Volgograd">Volgograd</option>
-                </select>
+   
     
     
     <input type="submit" 
@@ -68,16 +56,16 @@ try {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $date = date("Y-m-d");
-    $name = $_POST['city'];
+    
     // Insert data
     $sql_insert = 
-"INSERT INTO registration_tbl (name, email, date, city) 
-                   VALUES (?,?,?,?)";
+"INSERT INTO registration_tbl (name, email, date) 
+                   VALUES (?,?,?)";
     $stmt = $conn->prepare($sql_insert);
     $stmt->bindValue(1, $name);
     $stmt->bindValue(2, $email);
     $stmt->bindValue(3, $date);
-    $stmt->bindValue(4, $city);
+    
     $stmt->execute();
 }
 catch(Exception $e) {
@@ -94,13 +82,12 @@ if(count($registrants) > 0) {
     echo "<table>";
     echo "<tr><th>Name</th>";
     echo "<th>Email</th>";
-    echo "<th>Date</th>";
-    echo "<th>city</th></tr>";
+    echo "<th>Date</th></tr>";
+  
     foreach($registrants as $registrant) {
         echo "<tr><td>".$registrant['name']."</td>";
         echo "<td>".$registrant['email']."</td>";
-        echo "<td>".$registrant['date']."</td>";
-        echo "<td>".$registrant['city']."</td></tr>";
+        echo "<td>".$registrant['date']."</td></tr>";
     }
     echo "</table>";
 } else {
