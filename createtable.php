@@ -7,6 +7,7 @@ $sql = "CREATE TABLE registration_tbl(
     PRIMARY KEY(id),
     name VARCHAR(30),
     email VARCHAR(30),
+    sity VERCHAR(30),
     date DATE)";
     $conn->query($sql);
 }
