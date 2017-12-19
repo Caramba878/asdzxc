@@ -7,7 +7,7 @@ $sql = "CREATE TABLE registration_too(
     PRIMARY KEY(id),
     name VARCHAR(30),
     email VARCHAR(30),
-    city VERCHAR(30),
+    city VARCHAR(30),
     date DATE)";
     $conn->query($sql);
     
