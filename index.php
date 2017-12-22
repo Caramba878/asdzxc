@@ -63,7 +63,7 @@ try {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $date = date("Y-m-d");
-    $city = city()
+    $city = $_POST['city'];
     
     // Insert data
     $sql_insert = 
