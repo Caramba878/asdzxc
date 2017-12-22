@@ -32,8 +32,10 @@ enctype="multipart/form-data" >
 name="name" id="name"/></br>
       Email <input type="text" 
 name="email" id="email"/></br>
-    city <input type="text">
-    name="City" id="city"/></br>
+    <select name="city" id="city">
+        <option value="">Города</options>
+    </select>
+    </br>
 
  
     <input type="submit" 
