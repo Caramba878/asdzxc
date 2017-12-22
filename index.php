@@ -33,9 +33,17 @@ name="name" id="name"/></br>
       Email <input type="text" 
 name="email" id="email"/></br>
     <select name="city" id="city">
-        <?php
-        
-        ?>
+        <option value="Moskow"></options>
+    <option value="St.Petersburg"></options>
+<option value="Novosibirsk"></options>
+<option value="Ecaterenburg"></options>
+<option value="Novgorod"></options>
+<option value="Kazan"></options>
+<option value="Chelyabinsk"></options>
+<option value="Omsk"></options>
+<option value="Samara"></options>
+<option value="Rostov na Donu"></options>
+     
     
     </select>
     </br>
