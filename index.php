@@ -33,7 +33,8 @@ name="name" id="name"/></br>
       Email <input type="text" 
 name="email" id="email"/></br>
     <select name="city" id="city">
-        <option value="">Города</options>
+        <option value="">Город</options>
+    
     </select>
     </br>
 
