@@ -33,7 +33,7 @@ name="name" id="name"/></br>
       Email <input type="text" 
 name="email" id="email"/></br>
     city <input type="text">
-    name="city" id="city"/></br>
+    name="City" id="city"/></br>
 
  
     <input type="submit" 
