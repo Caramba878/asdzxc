@@ -33,9 +33,9 @@ name="name" id="name"/></br>
       Email <input type="text" 
 name="email" id="email"/></br>
     <select name="city" id="city">
-        <option value=""></options>
-    <option value="">Город</options>
-<option value="">Город</options>
+        <?php
+        
+        ?>
     
     </select>
     </br>
@@ -63,15 +63,17 @@ try {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $date = date("Y-m-d");
+    $city = city()
     
     // Insert data
     $sql_insert = 
 "INSERT INTO registration_too (name, email, date) 
-                   VALUES (?,?,?)";
+                   VALUES (?,?,?,?)";
     $stmt = $conn->prepare($sql_insert);
     $stmt->bindValue(1, $name);
     $stmt->bindValue(2, $email);
     $stmt->bindValue(3, $date);
+    $stmt->bindValue(4, $city);
     
     $stmt->execute();
 }
@@ -94,7 +96,8 @@ if(count($registrants) > 0) {
     foreach($registrants as $registrant) {
         echo "<tr><td>".$registrant['name']."</td>";
         echo "<td>".$registrant['email']."</td>";
-        echo "<td>".$registrant['date']."</td></tr>";
+         echo "<td>".$registrant['date']."</td>";
+        echo "<td>".$registrant['city']."</td></tr>";
     }
     echo "</table>";
 } else {
