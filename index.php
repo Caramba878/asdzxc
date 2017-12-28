@@ -78,7 +78,7 @@ try {
     
     // Insert data
     $sql_insert = 
-"INSERT INTO registration_too (name, email, date) 
+"INSERT INTO registration_too (name, email, city, date) 
                    VALUES (?,?,?,?)";
     $stmt = $conn->prepare($sql_insert);
     $stmt->bindValue(1, $name);
