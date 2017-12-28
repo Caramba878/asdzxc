@@ -72,8 +72,8 @@ if(!empty($_POST)) {
 try {
     $name = $_POST['name'];
     $email = $_POST['email'];
-     $city = $_POST['city'];
-    $date = date("Y-m-d");
+   $date = date("Y-m-d");
+      $city = $_POST['city'];
 
     
     // Insert data
