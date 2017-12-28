@@ -98,7 +98,7 @@ $sql_select = "SELECT * FROM registration_too";
 $stmt = $conn->query($sql_select);
 
 $stmt->execute();
-if(isset($_POST['filter'])) {
+if(isset($_POST['Filtr'])) {
 $city = $_POST['city'];
 $sql_select = "SELECT * FROM registration_on WHERE city like :city";
 $stmt = $conn->prepare($sql_select);
