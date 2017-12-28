@@ -51,6 +51,8 @@ name="email" id="email"/></br>
  
     <input type="submit" 
 name="submit" value="Submit" />
+  <input type="submit" 
+name="submit" value="Filtr" />
 </form>
 
 
@@ -92,12 +94,23 @@ echo "<h3>Your're registered!</h3>";
 
 $sql_select = "SELECT * FROM registration_too";
 $stmt = $conn->query($sql_select);
+
+$stmt->execute();
+if(isset($_POST['filter'])) {
+$gender = $_POST['country'];
+$sql_select = "SELECT * FROM registration_on WHERE country like :country";
+$stmt = $conn->prepare($sql_select);
+$stmt->execute(array(':country'=>$country.'%'));
+
+
 $registrants = $stmt->fetchAll(); 
+
 if(count($registrants) > 0) {
     echo "<h2>People who are registered:</h2>";
     echo "<table>";
     echo "<tr><th>Name</th>";
     echo "<th>Email</th>";
+echo "<th>City</th>";
     echo "<th>Date</th></tr>";
   
     foreach($registrants as $registrant) {
