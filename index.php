@@ -32,7 +32,7 @@ enctype="multipart/form-data" >
 name="name" id="name"/></br>
       Email <input type="text" 
 name="email" id="email"/></br>
-    <select name="city" id="city">
+    <select name="city">
         <option value="">Moskow</options>
     <option value="">Peterburg</options>
     <option value="">Novosibirsk</options>
@@ -99,10 +99,10 @@ $stmt = $conn->query($sql_select);
 
 $stmt->execute();
 if(isset($_POST['filter'])) {
-$gender = $_POST['country'];
-$sql_select = "SELECT * FROM registration_on WHERE country like :country";
+$city = $_POST['city'];
+$sql_select = "SELECT * FROM registration_on WHERE city like :city";
 $stmt = $conn->prepare($sql_select);
-$stmt->execute(array(':country'=>$country.'%'));
+$stmt->execute(array(':city'=>$city.'%'));
 
 }
 $registrants = $stmt->fetchAll(); 
