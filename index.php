@@ -53,8 +53,7 @@ name="email" id="email"/></br>
     <input type="submit" 
 name="submit" value="Submit" />
   <input type="submit" 
-name="submit" value="Filtr" />
-</form>
+
 
 
 
