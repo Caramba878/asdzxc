@@ -86,7 +86,7 @@ try {
     $stmt->bindValue(1, $name);
     $stmt->bindValue(2, $email);
     $stmt->bindValue(3, $date);
-     $stmt->bindValue(4, $city);
+    $stmt->bindValue(4, $city);
     
     $stmt->execute();
 }
@@ -103,8 +103,8 @@ $stmt->execute();
 if(isset($_POST['Filtr'])) {
 $city = $_POST['city'];
 $sql_select = "SELECT * FROM registration_on WHERE city like :city";
-$stmt = $conn->prepare($sql_select);
-$stmt->execute(array(':city'=>$city.'%'));
+$stmt = $conn->prepare ($sql_select);
+$stmt->execute (array(':city'=>$city.'%'));
 }
 $registrants = $stmt->fetchAll();
 if(count($registrants) > 0) {
