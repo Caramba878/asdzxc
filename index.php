@@ -33,16 +33,17 @@ name="name" id="name"/></br>
       Email <input type="text" 
 name="email" id="email"/></br>
     <select name="city">
-        <option value="">Moskow</option>
-    <option value="">Peterburg</option>
-    <option value="">Novosibirsk</option>
-<option value="">Ecaterenburg</option>
-        <option value="">Novgorod</option>
-<option value="">Kazan</option>
-<option value="">Chelyabinsk</option>
-<option value="">Omsk</option>
-<option value="">Samara</option>
-<option value="">Rostov</option>
+        <option value="">All</option>
+        <option value="Moskow">Moskow</option>
+    <option value="Peterburg">Peterburg</option>
+    <option value="Novosibirsk">Novosibirsk</option>
+<option value="Ecaterenburg">Ecaterenburg</option>
+        <option value="Novgorod">Novgorod</option>
+<option value="Kazan">Kazan</option>
+<option value="Chelyabinsk">Chelyabinsk</option>
+<option value="Omsk">Omsk</option>
+<option value="Samara">Samara</option>
+<option value="Rostov">Rostov</option>
      
     
     </select>
