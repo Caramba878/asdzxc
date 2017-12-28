@@ -72,17 +72,19 @@ if(!empty($_POST)) {
 try {
     $name = $_POST['name'];
     $email = $_POST['email'];
+     $city = $_POST['city'];
     $date = date("Y-m-d");
 
     
     // Insert data
     $sql_insert = 
 "INSERT INTO registration_too (name, email, date) 
-                   VALUES (?,?,?)";
+                   VALUES (?,?,?,?)";
     $stmt = $conn->prepare($sql_insert);
     $stmt->bindValue(1, $name);
     $stmt->bindValue(2, $email);
     $stmt->bindValue(3, $date);
+     $stmt->bindValue(4, $city);
     
     $stmt->execute();
 }
@@ -102,7 +104,7 @@ $sql_select = "SELECT * FROM registration_on WHERE country like :country";
 $stmt = $conn->prepare($sql_select);
 $stmt->execute(array(':country'=>$country.'%'));
 
-
+}
 $registrants = $stmt->fetchAll(); 
 
 if(count($registrants) > 0) {
@@ -116,6 +118,7 @@ echo "<th>City</th>";
     foreach($registrants as $registrant) {
         echo "<tr><td>".$registrant['name']."</td>";
         echo "<td>".$registrant['email']."</td>";
+        echo "<td>".$registrant['city']."</td>";
          echo "<td>".$registrant['date']."</td></tr>";
     }
     echo "</table>";
