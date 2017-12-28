@@ -111,7 +111,7 @@ echo "<h2>Люди, которые зарегистрированы:</h2>";
 echo "<table>";
 echo "<tr><th>Name</th>";
 echo "<th>Email</th>";
-echo "<th>city</th>";
+echo "<th>City</th>";
 echo "<th>Date</th></tr>";
 foreach($registrants as $registrant) {
 echo "<td>".$registrant['name']."</td>";
